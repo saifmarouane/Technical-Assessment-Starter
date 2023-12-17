@@ -6,22 +6,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppModule = void 0;
+exports.GptAiApiModule = void 0;
 const common_1 = require("@nestjs/common");
-const shared_module_1 = require("./shared/shared.module");
-const app_resolver_1 = require("./app.resolver");
-const gpt_ai_api_module_1 = require("./gpt_ai_api/gpt_ai_api.module");
-const config_1 = require("@nestjs/config");
-let AppModule = class AppModule {
+const gpt_ai_api_service_1 = require("./gpt_ai_api.service");
+const gpt_ai_api_controller_1 = require("./gpt_ai_api.controller");
+const axios_1 = require("@nestjs/axios");
+let GptAiApiModule = class GptAiApiModule {
 };
-exports.AppModule = AppModule;
-exports.AppModule = AppModule = __decorate([
+exports.GptAiApiModule = GptAiApiModule;
+exports.GptAiApiModule = GptAiApiModule = __decorate([
     (0, common_1.Module)({
-        imports: [shared_module_1.SharedModule, gpt_ai_api_module_1.GptAiApiModule, config_1.ConfigModule.forRoot({
-                isGlobal: true,
-                envFilePath: '.env',
-            })],
-        providers: [app_resolver_1.AppResolver],
+        providers: [gpt_ai_api_service_1.GptAiApiService],
+        imports: [axios_1.HttpModule],
+        controllers: [gpt_ai_api_controller_1.GptAiApiController],
+        exports: [gpt_ai_api_service_1.GptAiApiService],
     })
-], AppModule);
-//# sourceMappingURL=app.module.js.map
+], GptAiApiModule);
+//# sourceMappingURL=gpt_ai_api.module.js.map
