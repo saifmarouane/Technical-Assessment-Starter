@@ -6,14 +6,8 @@ import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb//localhost/conversation'),
 
-    ,SharedModule, GptAiApiModule,ConfigModule.forRoot(
-    {
-      isGlobal: true,
-      envFilePath: '.env',
-    }
-  )],
+    SharedModule, GptAiApiModule],
   providers: [AppResolver],
 })
 export class AppModule {}

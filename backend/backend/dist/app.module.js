@@ -11,16 +11,14 @@ const common_1 = require("@nestjs/common");
 const shared_module_1 = require("./shared/shared.module");
 const app_resolver_1 = require("./app.resolver");
 const gpt_ai_api_module_1 = require("./gpt_ai_api/gpt_ai_api.module");
-const config_1 = require("@nestjs/config");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [shared_module_1.SharedModule, gpt_ai_api_module_1.GptAiApiModule, config_1.ConfigModule.forRoot({
-                isGlobal: true,
-                envFilePath: '.env',
-            })],
+        imports: [
+            shared_module_1.SharedModule, gpt_ai_api_module_1.GptAiApiModule
+        ],
         providers: [app_resolver_1.AppResolver],
     })
 ], AppModule);
