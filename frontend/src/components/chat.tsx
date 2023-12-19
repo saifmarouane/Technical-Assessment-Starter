@@ -19,6 +19,7 @@ export function Chat() {
     setTimeout(() => scrollToBottom(containerRef), 100);
   }, [messages]);
 
+  
   return (
     <div className="rounded-2xl border h-[75vh] flex flex-col justify-between">
       <div className="p-6 overflow-auto" ref={containerRef}>
