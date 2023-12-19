@@ -4,8 +4,5 @@
 
 type Query {
   getHello: String!
-}
-
-type Mutation {
-  sendMessage(message: String!): String!
+  getOpenAIText(prompt: String!): String!
 }
