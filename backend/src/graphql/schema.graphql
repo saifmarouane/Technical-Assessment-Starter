@@ -5,3 +5,7 @@
 type Query {
   getHello: String!
 }
+
+type Mutation {
+  sendMessage(message: String!): String!
+}

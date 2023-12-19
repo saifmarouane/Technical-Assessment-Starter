@@ -1,6 +1,7 @@
-import { Injectable} from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { AxiosResponse } from 'axios';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { HttpService } from '@nestjs/axios';
 
 @Injectable()
@@ -13,7 +14,7 @@ export class GptAiApiService {
     this.apiUrl = 'https://api.openai.com/v1/engines/davinci-codex/completions';
   }
 
-  generateResponse(prompt: string): Observable<AxiosResponse> {
+  generateResponse(prompt: string): Observable<string> {
     const data = {
       prompt: prompt,
       max_tokens: 150,
@@ -27,6 +28,11 @@ export class GptAiApiService {
       'Authorization': `Bearer ${this.apiKey}`,
     };
 
-    return this.httpService.post(this.apiUrl, data, { headers: headers });
+    return this.httpService.post(this.apiUrl, data, { headers: headers }).pipe(
+      map((response: AxiosResponse) => {
+        // Assurez-vous d'ajuster cette ligne en fonction de la structure réelle de votre réponse
+        return response.data.choices[0].text; 
+      })
+    );
   }
 }
