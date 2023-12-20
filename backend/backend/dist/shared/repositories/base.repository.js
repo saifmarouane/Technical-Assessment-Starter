@@ -11,7 +11,10 @@ class BaseRepository {
         return { lean: true, autopopulate: true };
     }
     static getQueryOptions(options) {
-        const mergedOptions = Object.assign(Object.assign({}, BaseRepository.defaultOptions), (options || {}));
+        const mergedOptions = {
+            ...BaseRepository.defaultOptions,
+            ...(options || {}),
+        };
         const option = mergedOptions.lean ? { virtuals: true } : null;
         if (option && mergedOptions.autopopulate) {
             option['autopopulate'] = true;

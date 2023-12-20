@@ -16,6 +16,7 @@ export class GptAiApiService {
     this.openaiInstance = new OpenAI({
       apiKey: process.env.OPENAI_API_KEY,
     });
+
     this.apiKey = process.env.OPENAI_API_KEY;
     this.apiUrl = 'https://api.openai.com/v1/engines/davinci-codex/completions';
   }
@@ -29,7 +30,7 @@ export class GptAiApiService {
       });
       return response.choices[0].text.trim();
     } catch (error) {
-      console.error('Error generating text:', error);
+      console.error('Error  generating text:', error);
       throw error;
     }
   }

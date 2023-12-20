@@ -32,7 +32,7 @@ let GptAiApiService = class GptAiApiService {
             return response.choices[0].text.trim();
         }
         catch (error) {
-            console.error('Error generating text:', error);
+            console.error('Error  generating text:', error);
             throw error;
         }
     }

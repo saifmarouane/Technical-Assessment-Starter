@@ -7,7 +7,7 @@ import { AxiosResponse } from 'axios';
 export class AppResolver {
   constructor(private readonly chatGptService: GptAiApiService) {}
  
-
+  
   @Query(() => String)
   getHello(): string {
     return 'message';
@@ -20,6 +20,15 @@ export class AppResolver {
     return await this.chatGptService.generateText(prompt);
   }
   
+
+
+
+  ////////////////////////////////////////////
+
+
+ 
+
+
 }
 
 
