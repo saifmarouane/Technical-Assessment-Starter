@@ -11,7 +11,8 @@ const common_1 = require("@nestjs/common");
 const shared_module_1 = require("./shared/shared.module");
 const app_resolver_1 = require("./app.resolver");
 const gpt_ai_api_module_1 = require("./gpt_ai_api/gpt_ai_api.module");
-const testlongchain_controller_1 = require("./testlongchain/testlongchain.controller");
+const longchain_controller_1 = require("./longchain/longchain.controller");
+const longchain_service_1 = require("./longchain/longchain.service");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -20,8 +21,8 @@ exports.AppModule = AppModule = __decorate([
         imports: [
             shared_module_1.SharedModule, gpt_ai_api_module_1.GptAiApiModule
         ],
-        providers: [app_resolver_1.AppResolver],
-        controllers: [testlongchain_controller_1.TestlongchainController],
+        providers: [app_resolver_1.AppResolver, longchain_service_1.longchainService],
+        controllers: [longchain_controller_1.longchainController],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map

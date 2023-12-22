@@ -15,9 +15,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppResolver = void 0;
 const graphql_1 = require("@nestjs/graphql");
 const gpt_ai_api_service_1 = require("./gpt_ai_api/gpt_ai_api.service");
+const longchain_service_1 = require("./longchain/longchain.service");
 let AppResolver = class AppResolver {
-    constructor(chatGptService) {
+    constructor(chatGptService, longchainservice) {
         this.chatGptService = chatGptService;
+        this.longchainservice = longchainservice;
     }
     getHello() {
         return 'message';
@@ -42,6 +44,6 @@ __decorate([
 ], AppResolver.prototype, "getOpenAIText", null);
 exports.AppResolver = AppResolver = __decorate([
     (0, graphql_1.Resolver)(),
-    __metadata("design:paramtypes", [gpt_ai_api_service_1.GptAiApiService])
+    __metadata("design:paramtypes", [gpt_ai_api_service_1.GptAiApiService, longchain_service_1.longchainService])
 ], AppResolver);
 //# sourceMappingURL=app.resolver.js.map
