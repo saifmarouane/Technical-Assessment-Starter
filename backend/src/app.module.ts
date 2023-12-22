@@ -6,9 +6,10 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { AppResolver } from './app.resolver';
+import { SharedModule } from './shared/shared.module';
 
 @Module({
-  imports: [ChatModule],
+  imports: [ChatModule,SharedModule],
   controllers: [AppController],
   providers: [AppService,  AppResolver],
 
