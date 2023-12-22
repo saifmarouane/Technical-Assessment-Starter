@@ -16,7 +16,7 @@ export class ChatController {
   async askQuestion(
     @Query() questionDTO: QuestionDTO,
   ): Promise<{ text: string; source: string }> {
-    // Delegate the request to the ChatService's askQuestion method
+    // Delegate the request to the ChatService's askQuestion methode
     return this.chatService.askQuestion(questionDTO.question);
   }
 
