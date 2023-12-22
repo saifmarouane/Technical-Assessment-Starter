@@ -2,15 +2,18 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+
+
+
 type Query {
-  getHello: String!
+  hello: String!
 }
 
 type Query {
-  askQuestion(question: String!): ChatResponse!
+  askQuestion(question: String!): QuestionResponse!
 }
 
-type ChatResponse {
+type QuestionResponse {
   text: String!
   source: String!
 }
