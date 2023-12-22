@@ -5,3 +5,12 @@
 type Query {
   getHello: String!
 }
+
+type Query {
+  askQuestion(question: String!): ChatResponse!
+}
+
+type ChatResponse {
+  text: String!
+  source: String!
+}
