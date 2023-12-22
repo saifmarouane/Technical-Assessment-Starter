@@ -4,5 +4,4 @@
 
 type Query {
   getHello: String!
-  getOpenAIText(prompt: String!): String!
 }
