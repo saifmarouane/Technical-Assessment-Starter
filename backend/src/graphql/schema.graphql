@@ -2,18 +2,6 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-
-
-
 type Query {
-  hello: String!
-}
-
-type Query {
-  askQuestion(question: String!): QuestionResponse!
-}
-
-type QuestionResponse {
-  text: String!
-  source: String!
+  getHello: String!
 }
